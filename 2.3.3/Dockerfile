@@ -1,5 +1,4 @@
 FROM appsvc/rubybase:2.3.3
-MAINTAINER Azure App Services Container Images <appsvc-images@microsoft.com>
 
 COPY init_container.sh /bin/
 COPY startup.sh /opt/

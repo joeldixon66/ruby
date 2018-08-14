@@ -10,7 +10,7 @@ A P P   S E R V I C E   O N   L I N U X
 
 Documentation: http://aka.ms/webapp-linux
 Ruby quickstart: https://aka.ms/ruby-qs
-ImageMagick version 2
+ImageMagick version 2 install bundler
 
 EOL
 cat /etc/motd
@@ -22,5 +22,6 @@ eval $(printenv | awk -F= '{print "export " $1"="$2 }' >> /etc/profile)
 
 eval "$(rbenv init -)"
 rbenv global 2.3.3
+gem install bundler
 /opt/startup.sh "$@"
 

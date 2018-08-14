@@ -23,5 +23,6 @@ eval $(printenv | awk -F= '{print "export " $1"="$2 }' >> /etc/profile)
 eval "$(rbenv init -)"
 rbenv global 2.3.3
 gem install bundler
+gem install nokogiri -v 1.8.0
 /opt/startup.sh "$@"
 

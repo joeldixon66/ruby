@@ -10,7 +10,7 @@ A P P   S E R V I C E   O N   L I N U X
 
 Documentation: http://aka.ms/webapp-linux
 Ruby quickstart: https://aka.ms/ruby-qs
-ImageMagick version 2 install bundler
+ImageMagick nokogiri system libraries
 
 EOL
 cat /etc/motd
@@ -23,6 +23,6 @@ eval $(printenv | awk -F= '{print "export " $1"="$2 }' >> /etc/profile)
 eval "$(rbenv init -)"
 rbenv global 2.3.3
 gem install bundler
-gem install nokogiri -v 1.8.0
+gem install nokogiri -v 1.8.0 -- --use-system-libraries
 /opt/startup.sh "$@"
 

@@ -10,7 +10,7 @@ A P P   S E R V I C E   O N   L I N U X
 
 Documentation: http://aka.ms/webapp-linux
 Ruby quickstart: https://aka.ms/ruby-qs
-ImageMagick openssl
+ImageMagick libssl1.0-dev
 
 EOL
 cat /etc/motd

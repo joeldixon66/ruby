@@ -7,9 +7,11 @@ COPY hostingstart.html /home/site/wwwroot/hostingstart.html
 COPY staticsite.rb /opt/staticsite.rb
 
 RUN apt-get update -qq \
-    && apt-get install -y nodejs openssh-server vim curl wget openssl libssl1.0-dev imagemagick tcptraceroute --no-install-recommends \
+    && apt-get install -y nodejs openssh-server vim curl wget openssl imagemagick tcptraceroute --no-install-recommends \
     && echo "root:Docker!" | chpasswd \
     && echo "cd /home" >> /etc/bash.bashrc
+
+RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /usr/lib/libssl.so.1.0.2
 
 RUN eval "$(rbenv init -)" \
   && rbenv global 2.3.3

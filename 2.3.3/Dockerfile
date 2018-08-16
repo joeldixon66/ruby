@@ -9,8 +9,7 @@ COPY staticsite.rb /opt/staticsite.rb
 RUN printf "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
 
 RUN apt-get update -qq \
-    && apt-get install -y nodejs openssh-server vim curl wget imagemagick tcptraceroute --no-install-recommends \
-    && apt-get install -y openssl -t jessie-backports \
+    && apt-get install -y nodejs openssh-server vim curl wget libssl-dev imagemagick tcptraceroute --no-install-recommends \
     && echo "root:Docker!" | chpasswd \
     && echo "cd /home" >> /etc/bash.bashrc
 

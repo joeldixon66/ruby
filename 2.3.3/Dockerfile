@@ -6,7 +6,7 @@ COPY sshd_config /etc/ssh/
 COPY hostingstart.html /home/site/wwwroot/hostingstart.html
 COPY staticsite.rb /opt/staticsite.rb
 
-RUN printf "deb http://ftp.debian.org/debian jessie-backports main" > /etc/apt/sources.list
+RUN printf "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
 
 RUN apt-get update -qq \
     && apt-get install -y nodejs openssh-server vim curl wget imagemagick tcptraceroute --no-install-recommends \

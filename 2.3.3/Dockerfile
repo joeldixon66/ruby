@@ -7,7 +7,8 @@ COPY hostingstart.html /home/site/wwwroot/hostingstart.html
 COPY staticsite.rb /opt/staticsite.rb
 
 RUN apt-get update -qq \
-    && apt-get install -y nodejs openssh-server vim curl wget openssl imagemagick tcptraceroute --no-install-recommends \
+    && apt-get install -y nodejs openssh-server vim curl wget imagemagick tcptraceroute --no-install-recommends \
+    && apt-get install -y openssl -t jessie-backports \
     && echo "root:Docker!" | chpasswd \
     && echo "cd /home" >> /etc/bash.bashrc
 

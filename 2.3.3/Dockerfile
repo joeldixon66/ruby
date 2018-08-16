@@ -12,6 +12,10 @@ RUN apt-get update -qq \
     && echo "cd /home" >> /etc/bash.bashrc
 
 RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /usr/lib/libssl.so.1.0.2
+RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /usr/local/lib64/libssl.so.1.0.2
+RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /usr/lib64/libssl.so.1.0.2
+RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /home/libssl.so.1.0.2
+RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /home/site/wwwroot/libssl.so.1.0.2
 
 RUN eval "$(rbenv init -)" \
   && rbenv global 2.3.3

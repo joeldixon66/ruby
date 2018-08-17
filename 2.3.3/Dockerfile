@@ -9,7 +9,7 @@ COPY staticsite.rb /opt/staticsite.rb
 RUN printf "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
 
 RUN apt-get update -qq \
-    && apt-get install -y nodejs openssh-server vim curl wget libssl1.0-dev imagemagick tcptraceroute --no-install-recommends \
+    && apt-get install -y nodejs openssh-server vim curl wget openssl imagemagick tcptraceroute --no-install-recommends \
     && echo "root:Docker!" | chpasswd \
     && echo "cd /home" >> /etc/bash.bashrc
 
@@ -18,7 +18,7 @@ RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /home/libssl.so.1.0.2
 RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /home/site/wwwroot/libssl.so.1.0.2
 
 RUN eval "$(rbenv init -)" \
-  && rbenv global 2.3.3
+  && rbenv global 2.4.4
 
 RUN chmod 755 /bin/init_container.sh \
   && mkdir -p /home/LogFiles/ \

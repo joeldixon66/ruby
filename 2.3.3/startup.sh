@@ -67,6 +67,9 @@ echo 'Running bundle check'
 if [ "$ZIPPED_GEMS" -eq 1 ]
   then
     bundle config --global path $BUNDLE_INSTALL_LOCATION
+    echo 'Running check'
+    bundle check
+    echo 'Check ran'
     if bundle check | grep satisfied
     then
       echo 'dependency check passed'

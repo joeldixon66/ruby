@@ -1,4 +1,4 @@
-FROM appsvc/rubybase:2.3.3
+FROM joeldixon66/rubybase:2.4.4
 
 COPY init_container.sh /bin/
 COPY startup.sh /opt/
@@ -6,16 +6,16 @@ COPY sshd_config /etc/ssh/
 COPY hostingstart.html /home/site/wwwroot/hostingstart.html
 COPY staticsite.rb /opt/staticsite.rb
 
-RUN printf "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
+#RUN printf "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
 
 RUN apt-get update -qq \
     && apt-get install -y nodejs openssh-server vim curl wget openssl imagemagick tcptraceroute --no-install-recommends \
     && echo "root:Docker!" | chpasswd \
     && echo "cd /home" >> /etc/bash.bashrc
 
-RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /usr/lib/libssl.so.1.0.2
-RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /home/libssl.so.1.0.2
-RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /home/site/wwwroot/libssl.so.1.0.2
+#RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /usr/lib/libssl.so.1.0.2
+#RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /home/libssl.so.1.0.2
+#RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /home/site/wwwroot/libssl.so.1.0.2
 
 RUN eval "$(rbenv init -)" \
   && rbenv global 2.4.4

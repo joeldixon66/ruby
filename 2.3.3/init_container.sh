@@ -23,6 +23,5 @@ eval $(printenv | awk -F= '{print "export " $1"="$2 }' >> /etc/profile)
 eval "$(rbenv init -)"
 echo "LD_LIBRARY_PATH - $LD_LIBRARY_PATH"
 rbenv global 2.4.0
-gem install bundler
 /opt/startup.sh "$@"
 

@@ -1,4 +1,4 @@
-FROM joeldixon66/rubybase:2.4.4
+FROM joeldixon66/rubybase:2.4.0
 
 COPY init_container.sh /bin/
 COPY startup.sh /opt/
@@ -18,7 +18,7 @@ RUN apt-get update -qq \
 #RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.2 /home/site/wwwroot/libssl.so.1.0.2
 
 RUN eval "$(rbenv init -)" \
-  && rbenv global 2.4.4
+  && rbenv global 2.4.0
 
 RUN chmod 755 /bin/init_container.sh \
   && mkdir -p /home/LogFiles/ \

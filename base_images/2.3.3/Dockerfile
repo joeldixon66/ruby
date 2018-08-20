@@ -22,18 +22,18 @@ RUN chmod -R 777 /usr/local/.rbenv/plugins/ruby-build
 
 RUN /usr/local/.rbenv/plugins/ruby-build/install.sh
 
-# Install ruby 2.4.4
+# Install ruby 2.4.0
 ENV RUBY_CONFIGURE_OPTS=--disable-install-doc
 
 ENV RUBY_CFLAGS=-O3
 
 RUN eval "$(rbenv init -)" \
-  && export WEBSITES_LATEST_NODE_VERSION="2.4.4" \
+  && export WEBSITES_LATEST_NODE_VERSION="2.4.0" \
   && rbenv install $WEBSITES_LATEST_NODE_VERSION \
   && rbenv rehash \
   && rbenv global $WEBSITES_LATEST_NODE_VERSION \
   && ls /usr/local -a \
-  && gem install bundler --version "=1.16.3"\
+  && gem install bundler --version "=1.13.6"\
   && chmod -R 777 /usr/local/.rbenv/versions \
   && chmod -R 777 /usr/local/.rbenv/version
 

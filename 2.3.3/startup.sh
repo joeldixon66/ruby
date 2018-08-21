@@ -100,7 +100,7 @@ fi
 if [ -n "$GEM_PRISTINE" ]
   then
     echo 'running "gem pristine --all"'
-    bundle exec gem pristine --all
+    bundle exec gem pristine --all --skip=nokogiri
 fi
 
 if [ $# -ne 0 ]

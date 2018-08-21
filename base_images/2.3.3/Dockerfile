@@ -50,3 +50,5 @@ RUN apt-get install -y unixodbc-dev freetds-dev freetds-bin
 # Make temp directory for ruby images
 RUN mkdir -p /tmp/bundle
 RUN chmod 777 /tmp/bundle
+
+RUN bundle install puma -- --use-system-libraries

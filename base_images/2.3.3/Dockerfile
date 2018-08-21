@@ -51,4 +51,6 @@ RUN apt-get install -y unixodbc-dev freetds-dev freetds-bin
 RUN mkdir -p /tmp/bundle
 RUN chmod 777 /tmp/bundle
 
-RUN bundle install puma -- --use-system-libraries
+RUN eval "$(rbenv init -)" \
+  && rbenv global $WEBSITES_LATEST_NODE_VERSION \
+  && bundle install puma -- --use-system-libraries

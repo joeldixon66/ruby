@@ -10,7 +10,7 @@ A P P   S E R V I C E   O N   L I N U X
 
 Documentation: http://aka.ms/webapp-linux
 Ruby quickstart: https://aka.ms/ruby-qs
-ImageMagick ruby 2.3.3 no-nokogiri
+ImageMagick ruby 2.3.3 pristine puma
 
 EOL
 cat /etc/motd

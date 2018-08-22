@@ -22,6 +22,8 @@ RUN chmod -R 777 /usr/local/.rbenv/plugins/ruby-build
 
 RUN /usr/local/.rbenv/plugins/ruby-build/install.sh
 
+RUN export LD_LIBRARY_PATH=/usr/local/lib
+
 # Install ruby 2.3.3
 ENV RUBY_CONFIGURE_OPTS=--disable-install-doc
 

@@ -53,4 +53,4 @@ RUN chmod 777 /tmp/bundle
 
 RUN eval "$(rbenv init -)" \
   && rbenv global $WEBSITES_LATEST_NODE_VERSION \
-  && bundle install puma
+  && gem install puma

@@ -10,7 +10,7 @@ A P P   S E R V I C E   O N   L I N U X
 
 Documentation: http://aka.ms/webapp-linux
 Ruby quickstart: https://aka.ms/ruby-qs
-ImageMagick ruby 2.3.3 old puma
+ImageMagick ld_library_path
 
 EOL
 cat /etc/motd
@@ -21,6 +21,7 @@ service ssh start
 eval $(printenv | awk -F= '{print "export " $1"="$2 }' >> /etc/profile)
 
 eval "$(rbenv init -)"
+export LD_LIBRARY_PATH=/usr/local/lib
 echo "LD_LIBRARY_PATH - $LD_LIBRARY_PATH"
 rbenv global 2.3.3
 /opt/startup.sh "$@"

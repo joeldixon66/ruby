@@ -8,7 +8,7 @@ RUN apt-get update -qq
 # Dependencies for various ruby and rubygem installations
 RUN apt-get install -y git --no-install-recommends 
 RUN apt-get install -y -t jessie-backports openssl
-RUN apt-get install -y libreadline-dev bzip2 build-essential libssl-dev zlib1g-dev libpq-dev libsqlite3-dev \
+RUN apt-get install -y libreadline-dev bzip2 build-essential zlib1g-dev libpq-dev libsqlite3-dev \
   curl patch gawk g++ gcc make libc6-dev patch libreadline6-dev libyaml-dev sqlite3 autoconf \
   libgdbm-dev libncurses5-dev automake libtool bison pkg-config libffi-dev bison libxslt-dev \
   libxml2-dev libmysqlclient-dev imagemagick --no-install-recommends
